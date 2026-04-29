@@ -31,7 +31,7 @@
       <textarea id="user-input" rows="1" placeholder="메시지 입력... (Shift+Enter 줄바꿈, Enter 전송)"></textarea>
       <button id="btn-send">전송</button>
       {% if condition %}
-      <button id="btn-complete" disabled title="최소 1회 대화 후 완료 가능">대화 완료</button>
+      <button id="btn-complete" disabled title="3회 더 대화 후 완료 가능">대화 완료</button>
       {% endif %}
     </div>
   </div>
@@ -55,7 +55,7 @@
     const SESSION_ID = getOrCreateSessionId();
     let systemPrompt = "You are a helpful assistant.";
     let isStreaming = false;
-    let hasExchanged = false; // 최소 1회 대화 완료 여부
+    let exchangeCount = 0; // AI 응답 횟수
 
     // ── boot ──────────────────────────────────────────────────────────────
     async function boot() {
@@ -81,11 +81,11 @@
         if (msg.role === "user") appendUser(msg.content);
         else {
           appendAssistant(msg.content);
-          hasExchanged = true;
+          exchangeCount++;
         }
       }
 
-      if (hasExchanged) enableCompleteButton();
+      updateCompleteButton();
       scrollBottom();
     }
 
@@ -116,11 +116,16 @@
       el.scrollTop = el.scrollHeight;
     }
 
-    function enableCompleteButton() {
+    function updateCompleteButton() {
       const btn = document.getElementById("btn-complete");
-      if (btn) {
+      if (!btn) return;
+      const remaining = 3 - exchangeCount;
+      if (remaining <= 0) {
         btn.disabled = false;
         btn.title = "";
+      } else {
+        btn.disabled = true;
+        btn.title = `${remaining}회 더 대화 후 완료 가능`;
       }
     }
 
@@ -166,8 +171,8 @@
             content.textContent += payload.content;
             scrollBottom();
           } else if (payload.type === "done") {
-            hasExchanged = true;
-            enableCompleteButton();
+            exchangeCount++;
+            updateCompleteButton();
           } else if (payload.type === "error") {
             content.textContent = `[오류] ${payload.content}`;
             content.style.color = "var(--error)";
@@ -183,7 +188,7 @@
     const btnComplete = document.getElementById("btn-complete");
     if (btnComplete) {
       btnComplete.addEventListener("click", async () => {
-        if (!hasExchanged) return;
+        if (exchangeCount < 3) return;
         btnComplete.disabled = true;
         btnComplete.textContent = "처리 중...";
 
