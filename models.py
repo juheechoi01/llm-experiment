@@ -23,6 +23,7 @@ class Session(Base):
 
     id = Column(String, primary_key=True)
     condition = Column(String, nullable=True)
+    panel_id = Column(String, nullable=True)
     system_prompt = Column(Text, nullable=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))

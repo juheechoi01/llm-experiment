@@ -27,9 +27,9 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 BASE_DIR = Path(__file__).parent
 CONDITIONS = {
-    "tangible":    BASE_DIR / "prompt_tangible.txt",
-    "tangible-2":  BASE_DIR / "prompt_tangible_2.txt",
-    "authorless":  BASE_DIR / "prompt_authorless.txt",
+    "tangible":     BASE_DIR / "prompt_tangible.txt",
+    "tangible-2":   BASE_DIR / "prompt_tangible_2.txt",
+    "authorless":   BASE_DIR / "prompt_authorless.txt",
     "authorless-2": BASE_DIR / "prompt_authorless_2.txt",
 }
 
@@ -46,6 +46,7 @@ def load_condition_prompt(condition: str) -> str:
 class SessionCreate(BaseModel):
     session_id: str
     condition: str | None = None
+    panel_id: str | None = None
     system_prompt: str = DEFAULT_SYSTEM_PROMPT
 
 
@@ -63,15 +64,15 @@ class SystemPromptUpdate(BaseModel):
 @app.get("/")
 async def index(request: Request):
     return templates.TemplateResponse(request=request, name="index.html",
-                                      context={"condition": None})
+                                      context={"condition": None, "panel_id": None})
 
 
 @app.get("/{condition}")
-async def condition_page(request: Request, condition: str):
+async def condition_page(request: Request, condition: str, panel_id: str | None = None):
     if condition not in CONDITIONS:
         raise HTTPException(status_code=404, detail="Not found")
     return templates.TemplateResponse(request=request, name="index.html",
-                                      context={"condition": condition})
+                                      context={"condition": condition, "panel_id": panel_id})
 
 
 # ---------- API routes ----------
@@ -82,12 +83,13 @@ def create_session(body: SessionCreate, db: DBSession = Depends(get_db)):
     if existing:
         return {"session_id": existing.id, "system_prompt": existing.system_prompt}
 
-    if body.condition:
-        system_prompt = load_condition_prompt(body.condition)
-    else:
-        system_prompt = body.system_prompt
-
-    session = Session(id=body.session_id, condition=body.condition, system_prompt=system_prompt)
+    system_prompt = load_condition_prompt(body.condition) if body.condition else body.system_prompt
+    session = Session(
+        id=body.session_id,
+        condition=body.condition,
+        panel_id=body.panel_id,
+        system_prompt=system_prompt,
+    )
     db.add(session)
     db.commit()
     return {"session_id": session.id, "system_prompt": session.system_prompt}
@@ -103,8 +105,6 @@ def get_history(session_id: str, db: DBSession = Depends(get_db)):
         {
             "role": m.role,
             "content": m.content,
-            "prompt_tokens": m.prompt_tokens,
-            "completion_tokens": m.completion_tokens,
             "created_at": m.created_at.isoformat(),
         }
         for m in session.messages
@@ -123,6 +123,21 @@ def update_system_prompt(session_id: str, body: SystemPromptUpdate, db: DBSessio
     db.query(Message).filter(Message.session_id == session_id).delete()
     db.commit()
     return {"ok": True}
+
+
+@app.post("/api/sessions/{session_id}/complete")
+def complete_session(session_id: str, db: DBSession = Depends(get_db)):
+    """패널이 대화를 완료했을 때 리다이렉트 URL을 반환."""
+    session = db.get(Session, session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    redirect_base = os.environ.get("REDIRECT_BASE_URL", "")
+    if not redirect_base or not session.panel_id:
+        return {"redirect_url": None}
+
+    redirect_url = f"{redirect_base}?panel_id={session.panel_id}&status=001"
+    return {"redirect_url": redirect_url}
 
 
 @app.post("/api/chat")
@@ -178,6 +193,6 @@ def chat(body: ChatRequest, db: DBSession = Depends(get_db)):
         db.add(assistant_msg)
         db.commit()
 
-        yield f"data: {json.dumps({'type': 'done', 'prompt_tokens': prompt_tokens, 'completion_tokens': completion_tokens})}\n\n"
+        yield f"data: {json.dumps({'type': 'done'})}\n\n"
 
     return StreamingResponse(generate(), media_type="text/event-stream")

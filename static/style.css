@@ -188,6 +188,27 @@ header h1 {
 #btn-send:hover { opacity: 0.85; }
 #btn-send:disabled { opacity: 0.4; cursor: not-allowed; }
 
+#btn-complete {
+  background: #2a2a2a;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: not-allowed;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 42px;
+  transition: all 0.15s;
+}
+#btn-complete:not(:disabled) {
+  background: #1a3a1a;
+  color: #6fcf6f;
+  border-color: #3a6a3a;
+  cursor: pointer;
+}
+#btn-complete:not(:disabled):hover { background: #1f4a1f; }
+
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

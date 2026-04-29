@@ -30,14 +30,18 @@
     <div id="input-area">
       <textarea id="user-input" rows="1" placeholder="메시지 입력... (Shift+Enter 줄바꿈, Enter 전송)"></textarea>
       <button id="btn-send">전송</button>
+      {% if condition %}
+      <button id="btn-complete" disabled title="최소 1회 대화 후 완료 가능">대화 완료</button>
+      {% endif %}
     </div>
   </div>
 
   <script>
     const CONDITION = {{ condition | tojson }};
+    // 서버에서 전달된 panel_id (URL 쿼리 파라미터로 받은 값)
+    const PANEL_ID = {{ panel_id | tojson }};
 
-    // condition별 독립 session ID
-    const storageKey = CONDITION ? `chat_session_id_${CONDITION}` : "chat_session_id";
+    const storageKey = CONDITION ? `chat_session_id_${CONDITION}_${PANEL_ID || 'anon'}` : "chat_session_id";
 
     function getOrCreateSessionId() {
       let id = localStorage.getItem(storageKey);
@@ -51,11 +55,13 @@
     const SESSION_ID = getOrCreateSessionId();
     let systemPrompt = "You are a helpful assistant.";
     let isStreaming = false;
+    let hasExchanged = false; // 최소 1회 대화 완료 여부
 
     // ── boot ──────────────────────────────────────────────────────────────
     async function boot() {
       const body = { session_id: SESSION_ID };
       if (CONDITION) body.condition = CONDITION;
+      if (PANEL_ID) body.panel_id = PANEL_ID;
 
       await fetch("/api/sessions", {
         method: "POST",
@@ -73,8 +79,13 @@
 
       for (const msg of data.messages) {
         if (msg.role === "user") appendUser(msg.content);
-        else appendAssistant(msg.content);
+        else {
+          appendAssistant(msg.content);
+          hasExchanged = true;
+        }
       }
+
+      if (hasExchanged) enableCompleteButton();
       scrollBottom();
     }
 
@@ -103,6 +114,14 @@
     function scrollBottom() {
       const el = document.getElementById("messages");
       el.scrollTop = el.scrollHeight;
+    }
+
+    function enableCompleteButton() {
+      const btn = document.getElementById("btn-complete");
+      if (btn) {
+        btn.disabled = false;
+        btn.title = "";
+      }
     }
 
     // ── send ──────────────────────────────────────────────────────────────
@@ -146,6 +165,9 @@
           if (payload.type === "token") {
             content.textContent += payload.content;
             scrollBottom();
+          } else if (payload.type === "done") {
+            hasExchanged = true;
+            enableCompleteButton();
           } else if (payload.type === "error") {
             content.textContent = `[오류] ${payload.content}`;
             content.style.color = "var(--error)";
@@ -155,6 +177,27 @@
 
       isStreaming = false;
       document.getElementById("btn-send").disabled = false;
+    }
+
+    // ── 대화 완료 ─────────────────────────────────────────────────────────
+    const btnComplete = document.getElementById("btn-complete");
+    if (btnComplete) {
+      btnComplete.addEventListener("click", async () => {
+        if (!hasExchanged) return;
+        btnComplete.disabled = true;
+        btnComplete.textContent = "처리 중...";
+
+        const res = await fetch(`/api/sessions/${SESSION_ID}/complete`, { method: "POST" });
+        const data = await res.json();
+
+        if (data.redirect_url) {
+          window.location.href = data.redirect_url;
+        } else {
+          // 리다이렉트 URL 미설정 시 완료 메시지 표시
+          document.getElementById("input-area").innerHTML =
+            '<p style="color:var(--text-muted);padding:12px;">대화가 완료되었습니다. 감사합니다.</p>';
+        }
+      });
     }
 
     // ── system prompt panel (일반 모드 전용) ──────────────────────────────
