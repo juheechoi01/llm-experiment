@@ -23,7 +23,13 @@ templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant."
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+
+def get_openai_client() -> OpenAI:
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY environment variable is not set")
+    return OpenAI(api_key=api_key)
 
 BASE_DIR = Path(__file__).parent
 CONDITIONS = {
@@ -161,7 +167,7 @@ def chat(body: ChatRequest, db: DBSession = Depends(get_db)):
         completion_tokens = 0
 
         try:
-            stream = client.chat.completions.create(
+            stream = get_openai_client().chat.completions.create(
                 model="gpt-4o",
                 messages=history,
                 stream=True,
