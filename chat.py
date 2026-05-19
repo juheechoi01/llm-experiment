@@ -28,27 +28,36 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).parent
 
-CONDITIONS = {
-    "tangible":     BASE_DIR / "prompt_tangible.txt",
-    "tangible-2":   BASE_DIR / "prompt_tangible_2.txt",
-    "authorless":   BASE_DIR / "prompt_authorless.txt",
-    "authorless-2": BASE_DIR / "prompt_authorless_2.txt",
+PROMPT_SHARED = {
+    "animal_testing":  BASE_DIR / "prompt_shared_core.txt",
+    "social_media_ban": BASE_DIR / "prompt_shared_core_2.txt",
 }
+
+CONDITION_BLOCKS = {
+    "animal_testing": {
+        "interest":     BASE_DIR / "prompt_condition_interest.txt",
+        "neutral":    BASE_DIR / "prompt_condition_neutral.txt",
+        "authorless": BASE_DIR / "prompt_condition_authorless.txt",
+    },
+    "social_media_ban": {
+        "interest":     BASE_DIR / "prompt_condition_interest_2.txt",
+        "neutral":    BASE_DIR / "prompt_condition_neutral_2.txt",
+        "authorless": BASE_DIR / "prompt_condition_authorless_2.txt",
+    },
+}
+
+CONDITION_NAMES = ["interest", "neutral", "authorless"]
 
 # The topic label passed to the user simulator's first-turn prompt
 TOPICS = {
-    "tangible":     "중증 질환 치료 연구를 위한 동물 실험 허용 여부",
-    "tangible-2":   "미성년자 소셜 미디어 사용 제한·금지 법안 도입 여부",
-    "authorless":   "중증 질환 치료 연구를 위한 동물 실험 허용 여부",
-    "authorless-2": "미성년자 소셜 미디어 사용 제한·금지 법안 도입 여부",
+    "animal_testing": "중증 질환 치료 연구를 위한 동물 실험 허용 여부",
+    "social_media_ban": "미성년자 소셜 미디어 사용 제한·금지 법안 도입 여부",
 }
 
 # The user simulator's own position — opposite to the persuader
 USER_POSITIONS = {
-    "tangible":     "중증 질환 치료 연구 목적이라도 동물 실험은 허용되어서는 안 된다",
-    "tangible-2":   "미성년자의 소셜 미디어 사용을 제한하거나 금지하는 법안이 필요하다",
-    "authorless":   "중증 질환 치료 연구 목적이라도 동물 실험은 허용되어서는 안 된다",
-    "authorless-2": "미성년자의 소셜 미디어 사용을 제한하거나 금지하는 법안이 필요하다",
+    "animal_testing": "중증 질환 치료 연구 목적이라도 동물 실험은 허용되어서는 안 된다",
+    "social_media_ban": "미성년자의 소셜 미디어 사용을 제한하거나 금지하는 법안이 필요하다",
 }
 
 USER_SIMULATOR_SYSTEM = """\
@@ -63,9 +72,11 @@ USER_SIMULATOR_SYSTEM = """\
 - 대화 내용만 출력하고 다른 설명은 덧붙이지 마십시오.
 """
 
+def load_system_prompt(condition: str, topic_key: str) -> str:
+    shared = PROMPT_SHARED[topic_key].read_text(encoding="utf-8").strip()
+    block = CONDITION_BLOCKS[topic_key][condition].read_text(encoding="utf-8").strip()
+    return shared + "\n\n" + block
 
-def load_condition_prompt(condition: str) -> str:
-    return CONDITIONS[condition].read_text().strip()
 
 
 def count_existing_runs(output_file: Path) -> int:
@@ -170,6 +181,7 @@ def run_single_simulation(
 
 def run_condition(
     condition: str,
+    topic_key: str,
     n_runs: int,
     n_turns: int,
     output_dir: Path,
@@ -177,9 +189,9 @@ def run_condition(
     delay: float,
 ) -> None:
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    system_prompt = load_condition_prompt(condition)
-    topic = TOPICS[condition]
-    user_position = USER_POSITIONS[condition]
+    system_prompt = load_system_prompt(condition, topic_key)
+    topic = TOPICS[topic_key]
+    user_position = USER_POSITIONS[topic_key]
 
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / f"{condition}.jsonl"
@@ -228,8 +240,15 @@ def main() -> None:
         "--conditions",
         nargs="+",
         default=["all"],
-        choices=list(CONDITIONS) + ["all"],
+        choices=CONDITION_NAMES + ["all"],
         help="Which conditions to run (default: all)",
+    )
+    parser.add_argument(
+        "--topic",
+        type=str,
+        default="animal_testing",
+        choices=list(TOPICS),
+        help="Topic for the simulation (default: animal_testing)",
     )
     parser.add_argument("--runs",   type=int,   default=100,          help="Simulations per condition (default: 100)")
     parser.add_argument("--turns",  type=int,   default=3,            help="Conversation turns per simulation (default: 3)")
@@ -238,13 +257,14 @@ def main() -> None:
     parser.add_argument("--output", type=str,   default="simulations",help="Output directory (default: simulations/)")
     args = parser.parse_args()
 
-    conditions = list(CONDITIONS) if "all" in args.conditions else args.conditions
+    conditions = list(CONDITION_BLOCKS[args.topic]) if "all" in args.conditions else args.conditions
     output_dir = BASE_DIR / args.output
 
     print(f"Starting simulations — {len(conditions)} condition(s), {args.runs} runs each")
     for condition in conditions:
         run_condition(
             condition=condition,
+            topic_key=args.topic,
             n_runs=args.runs,
             n_turns=args.turns,
             output_dir=output_dir,

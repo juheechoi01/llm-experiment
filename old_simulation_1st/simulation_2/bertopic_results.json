@@ -1,0 +1,376 @@
+{
+  "n_topics": 15,
+  "n_noise": 32,
+  "noise_pct": 1.8,
+  "kl_divergence": 0.2759,
+  "topics": {
+    "-1": {
+      "count": 32,
+      "tangible": 16,
+      "authorless": 16,
+      "tangible_pct": 50.0,
+      "authorless_pct": 50.0,
+      "representative_docs": [
+        "동물 모델은 현재 인간 질환의 복잡성을 연구하는 데 필수적입니다",
+        "동물 실험은 첨단 과학의 발전을 촉진합니다; 하버드 의과대학(Harvard Medical School)의 연구는 동물 실험이 바이오메디컬 분야 혁신을 촉진하는 중요한 요소로 작용하고 있음을 보여줍니다",
+        "기술 발전이 결국 동물 실험을 줄이는데 기여할 수 있지만, 탁월한 치료법 개발이라는 목표를 위해서는 실질적이고 즉각적인 검증이 필요합니다. '하버드 의과대학'(Harvard Medical School)도 동물 실험을 통한 생체 연구의 중요성을 인정하고 있으며, 이는 현재 복잡한 생리적 구조를 완전히 재현할 수 있는 방법이 부족하기 때문이라고 보고합니다"
+      ],
+      "keywords": [
+        "medical school",
+        "medical",
+        "harvard medical",
+        "harvard",
+        "school",
+        "school harvard",
+        "",
+        ""
+      ],
+      "label": "Noise (미분류)"
+    },
+    "0": {
+      "count": 309,
+      "tangible": 148,
+      "authorless": 161,
+      "tangible_pct": 47.9,
+      "authorless_pct": 52.1,
+      "representative_docs": [
+        "동물 실험의 윤리적 관리가 지속적으로 강화되고 있습니다. \"유럽 동물 연구협회(EARA)\"는 동물 실험을 수행할 때 고통을 최소화하고 동물의 복지를 보장하기 위한 국제적인 표준이 존재하며, 이는 윤리적 평가를 통해 지속적으로 개선되고 있다고 발표합니다",
+        "첫째, 3R 원칙은 단순히 동물 사용을 줄이는 데서 그치지 않고, 동물 실험의 윤리적 실행을 근본적으로 개선하려는 지속적인 노력의 일부입니다",
+        "둘째, 윤리적인 동물 실험 관행은 이미 강화되고 있습니다. '동물실험을위한국제연합(International Council for Laboratory Animal Science)'는 윤리적인 기준을 엄격하게 준수하고 있으며, 동물 실험의 필요성을 신중히 평가하고 있습니다"
+      ],
+      "keywords": [
+        "3r",
+        "uk research",
+        "department of",
+        "department",
+        "eara",
+        "council",
+        "agriculture 3r",
+        "animal science"
+      ],
+      "label": "동물 실험 윤리 관리 강화"
+    },
+    "1": {
+      "count": 272,
+      "tangible": 118,
+      "authorless": 154,
+      "tangible_pct": 43.4,
+      "authorless_pct": 56.6,
+      "representative_docs": [
+        "대안적 방법이 증가하고 있지만 아직 불충분합니다; 미국 바이오산업협회(Biotechnology Innovation Organization)는 대안적 실험 방법들이 존재하지만, 특정 생리적 반응 연구에서는 동물 실험의 필요성을 지적합니다",
+        "동물 실험을 통해 대안적 방법에 대한 통찰을 얻습니다; 막스 플랑크 연구소(Max Planck Institute)는 동물 실험을 통해 얻은 지식을 바탕으로 대안적 실험 방법을 개발하는 데 기여하고 있음을 강조합니다",
+        "혁신적인 대안 개발에도 불구하고 동물 실험의 현장은 필수적입니다; 미국 암 연구 협회(American Association for Cancer Research)는 동물 실험 데이터가 신약 개발 초기 단계에서 대체 불가능한 역할을 한다고 보고합니다"
+      ],
+      "keywords": [
+        "american",
+        "innovation",
+        "biotechnology innovation",
+        "ema",
+        "ema fda",
+        "biotechnology",
+        "association for",
+        "association"
+      ],
+      "label": "동물 실험의 필요성"
+    },
+    "2": {
+      "count": 260,
+      "tangible": 98,
+      "authorless": 162,
+      "tangible_pct": 37.7,
+      "authorless_pct": 62.3,
+      "representative_docs": [
+        "동물 실험은 연구 초기 단계에서 중요한 예비 데이터를 제공합니다. \"영국 약리학회(British Pharmacological Society)\"는 동물 모델을 통해 초기 안전 및 약물 대사 정보를 확보함으로써 인간 임상 시험의 위험을 줄일 수 있다고 진술합니다",
+        "동물 실험은 예측 불가한 인간 시험의 안전성을 보장합니다. '존스 홉킨스 의과대학'(Johns Hopkins University School of Medicine)도 동물 실험의 중요성을 강조하며, 이는 임상시험 단계 이전에 발생할 수 있는 위험을 사전에 탐지하여 인간 대상 실험의 안전을 담보하는 데 반드시 필요하다고 언급합니다",
+        "동물 실험은 인간 건강에 직접적인 기여를 합니다; 자연과학계에서 동물 실험을 통해 얻은 데이터는 새로운 치료법 개발에 필수적임을 강조하는 것은 미국 국립보건원(National Institutes of Health)입니다"
+      ],
+      "keywords": [
+        "health",
+        "fda",
+        "of",
+        "nih british",
+        "drug administration",
+        "british",
+        "corporation",
+        "world health"
+      ],
+      "label": "예비 데이터 제공의 중요성"
+    },
+    "3": {
+      "count": 153,
+      "tangible": 111,
+      "authorless": 42,
+      "tangible_pct": 72.5,
+      "authorless_pct": 27.5,
+      "representative_docs": [
+        "둘째, 대체 실험 방법의 현재 한계로 인해 동물 실험은 여전히 필수적입니다",
+        "둘째로, 동물 실험은 인류의 생명을 구하는 혁신적인 의약품 개발에 기여합니다",
+        "둘째, 동물 실험은 임상 시험 전에 의약품의 안전성과 효과를 검증하는 데 중요한 역할을 합니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "대체법 한계와 동물 실험"
+    },
+    "4": {
+      "count": 121,
+      "tangible": 83,
+      "authorless": 38,
+      "tangible_pct": 68.6,
+      "authorless_pct": 31.4,
+      "representative_docs": [
+        "셋째, 과학적 연구는 동물 실험을 점진적으로 대체하려는 방향으로 진화하고 있으나, 아직 실효적 대체법이 완전히 확보되지 않았습니다",
+        "셋째, 대체 방법이 아직 충분히 개발되지 않았습니다",
+        "셋째, 이미 대체 기술 개발에 많은 투자가 이루어지고 있습니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "대체 방법 개발의 필요성"
+    },
+    "5": {
+      "count": 110,
+      "tangible": 44,
+      "authorless": 66,
+      "tangible_pct": 40.0,
+      "authorless_pct": 60.0,
+      "representative_docs": [
+        "대체 방법은 아직 충분히 발전하지 않았습니다",
+        "대체 방법의 연구와 동물 실험은 공존하며 상호 보완적으로 사용될 수 있습니다. '국제 생명과학연구소 (ILAR)'는 현대 생명과학 연구에서는 다양한 방법론이 통합되어야 하며, 동물 실험은 그러한 다각적인 접근의 한 축으로서 계속 중요한 역할을 할 수 있다고 보고합니다",
+        "대체 방법 개발을 위해 연구와 투자를 강화하고 있지만, 아직은 동물 실험의 필요를 대체할 수 없습니다. '로슈 홀딩'(Roche Holding)은 동물 실험을 줄이기 위한 연구 개발의 중요성을 인지하고 있으며, 그럼에도 불구하고 현재 기술로는 완전한 대체가 불가능하다는 점을 여러 차례 강조합니다"
+      ],
+      "keywords": [
+        "roche holding",
+        "roche",
+        "ilar",
+        "holding ilar",
+        "holding",
+        "",
+        "",
+        ""
+      ],
+      "label": "동물 실험과 대체 방법의 공존"
+    },
+    "6": {
+      "count": 91,
+      "tangible": 35,
+      "authorless": 56,
+      "tangible_pct": 38.5,
+      "authorless_pct": 61.5,
+      "representative_docs": [
+        "셋째, 동물 실험은 중증 질환의 치료법 개발에 필수적인 기초 과학 연구의 기반을 제공합니다",
+        "동물 실험은 중증 질환에 대한 효과적인 치료법을 개발하는 데 필수적입니다",
+        "동물 실험은 수많은 인류 질환 치료제를 발견하는 기반이 됩니다. '노바티스 연구 재단'(Novartis Research Foundation)은 동물 실험을 통해 다수의 혁신적인 치료제를 개발하였으며, 이는 인간의 수명을 연장하고 삶의 질을 향상시키는데 크게 기여하고 있음을 강조합니다"
+      ],
+      "keywords": [
+        "research foundation",
+        "novartis research",
+        "novartis",
+        "foundation",
+        "research",
+        "",
+        "",
+        ""
+      ],
+      "label": "중증 질환 연구의 기초"
+    },
+    "7": {
+      "count": 77,
+      "tangible": 32,
+      "authorless": 45,
+      "tangible_pct": 41.6,
+      "authorless_pct": 58.4,
+      "representative_docs": [
+        "동물 실험은 대규모 인도적 영향을 미칩니다",
+        "또한, 동물 실험은 인간의 생명 구하는 데 있어서 중요한 역할을 합니다",
+        "또한, 동물 실험은 인류의 생명을 구하는 데 기여합니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "인도적 영향과 생명 구원"
+    },
+    "8": {
+      "count": 71,
+      "tangible": 51,
+      "authorless": 20,
+      "tangible_pct": 71.8,
+      "authorless_pct": 28.2,
+      "representative_docs": [
+        "첫째, 현재 대체 실험 방법들이 존재하지만, 이러한 방법은 여전히 완전하지 않습니다",
+        "첫째, 대체 방법들은 동물 전체의 복잡한 생리학적 반응을 재현하는 데 한계가 있습니다",
+        "첫째, 동물 실험은 여전히 대체 방법으로는 충족할 수 없는 정확성과 비교할 수 없는 정보를 제공합니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "대체 방법의 한계"
+    },
+    "9": {
+      "count": 63,
+      "tangible": 44,
+      "authorless": 19,
+      "tangible_pct": 69.8,
+      "authorless_pct": 30.2,
+      "representative_docs": [
+        "첫째로, 동물 실험은 치료제의 유효성을 확인하는 데 중요합니다",
+        "첫째, 동물과 인간 간의 생리학적 차이를 통해 중요한 정보를 얻을 수 있습니다",
+        "첫째, 동물 실험은 치명적인 질병 치료법 개발에 필수적입니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "치료제 유효성 확인 중요성"
+    },
+    "10": {
+      "count": 42,
+      "tangible": 20,
+      "authorless": 22,
+      "tangible_pct": 47.6,
+      "authorless_pct": 52.4,
+      "representative_docs": [
+        "인간의 건강 개선에 기여할 과학적 연구 발전을 위해 동물 실험은 불가피합니다",
+        "동물 실험은 인류의 건강과 생명 연장을 위한 중대한 연구에 필수적입니다",
+        "인류의 생명을 구하고 질병으로부터 보호하기 위한 과학적 연구는 윤리적으로 필요합니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "인간 건강 위한 연구 필요성"
+    },
+    "11": {
+      "count": 38,
+      "tangible": 15,
+      "authorless": 23,
+      "tangible_pct": 39.5,
+      "authorless_pct": 60.5,
+      "representative_docs": [
+        "동물 실험은 과학적 발전을 가속화하는 데 기여합니다",
+        "동물 실험은 인류에게 중요한 의학적 돌파구를 제공합니다",
+        "동물 실험은 긴급한 의학적 필요를 해결하는 과정에서 여전히 불가피합니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "과학 발전 가속화 기여"
+    },
+    "12": {
+      "count": 31,
+      "tangible": 12,
+      "authorless": 19,
+      "tangible_pct": 38.7,
+      "authorless_pct": 61.3,
+      "representative_docs": [
+        "동물 실험은 인체와 유사한 생리적 반응을 제공합니다",
+        "동물 실험은 인간과 비슷한 생리학적 시스템을 제공하여 실험 결과의 신뢰도를 높입니다",
+        "동물 실험은 인간과의 생리적 차이를 고려하여 설계됩니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "인체 유사 생리적 반응"
+    },
+    "13": {
+      "count": 31,
+      "tangible": 21,
+      "authorless": 10,
+      "tangible_pct": 67.7,
+      "authorless_pct": 32.3,
+      "representative_docs": [
+        "마지막으로, 동물 실험은 기존 치료법의 한계를 극복하는 데 기여합니다",
+        "마지막으로, 과학 연구에서는 동물의 삶의 질에 대한 깊은 존중이 중요합니다",
+        "마지막으로, 비동물실험 방법은 여전히 한계가 있습니다"
+      ],
+      "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "기존 치료법 한계 극복"
+    },
+    "14": {
+      "count": 30,
+      "tangible": 17,
+      "authorless": 13,
+      "tangible_pct": 56.7,
+      "authorless_pct": 43.3,
+      "representative_docs": [
+        "컴퓨터 모델링이나 인공 장기는 초기 예측 단계에서 유용하지만, 실제 생명체의 복잡한 생리적 반응을 재현하기엔 한계가 있습니다",
+        "컴퓨터 모델과 3D 배양 기술이 발전하였지만, 이러한 대체 기술만으로는 복잡한 생명체 반응을 완벽히 예측할 수 없습니다",
+        "3D 세포 모델과 컴퓨터 시뮬레이션 등 대체 기술은 여전히 인간 생리학의 복잡성을 완전히 대체할 수 없습니다"
+      ],
+      "keywords": [
+        "3d",
+        "3d 3d",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "label": "대체 기술의 한계"
+    }
+  }
+}

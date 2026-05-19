@@ -1,0 +1,405 @@
+{
+  "claim_topics": {
+    "cluster_stats": {
+      "0": {
+        "label": "윤리적 기준과 대안 방법의 발전",
+        "total": 164,
+        "tangible": 63,
+        "authorless": 101,
+        "tangible_pct": 38.41463414634146,
+        "authorless_pct": 61.58536585365854
+      },
+      "1": {
+        "label": "윤리적 관리와 동물 고통 최소화",
+        "total": 271,
+        "tangible": 128,
+        "authorless": 143,
+        "tangible_pct": 47.23247232472325,
+        "authorless_pct": 52.76752767527675
+      },
+      "2": {
+        "label": "동물 실험의 대체 불가능성",
+        "total": 293,
+        "tangible": 170,
+        "authorless": 123,
+        "tangible_pct": 58.02047781569966,
+        "authorless_pct": 41.97952218430034
+      },
+      "3": {
+        "label": "대체 기술의 부족과 필요성",
+        "total": 171,
+        "tangible": 68,
+        "authorless": 103,
+        "tangible_pct": 39.76608187134503,
+        "authorless_pct": 60.23391812865497
+      },
+      "4": {
+        "label": "치료법 개발에 대한 기여",
+        "total": 319,
+        "tangible": 192,
+        "authorless": 127,
+        "tangible_pct": 60.18808777429467,
+        "authorless_pct": 39.81191222570533
+      },
+      "5": {
+        "label": "인류 생명 구제의 중요성",
+        "total": 474,
+        "tangible": 252,
+        "authorless": 222,
+        "tangible_pct": 53.164556962025316,
+        "authorless_pct": 46.835443037974684
+      }
+    },
+    "kl_divergence": 0.09057844974904307
+  },
+  "org_mention_stats": {
+    "total": {
+      "authorless": 819,
+      "tangible": 873
+    },
+    "with_org": {
+      "tangible": 442,
+      "authorless": 0
+    }
+  },
+  "org_verification": {
+    "results": [
+      {
+        "name": "America Society for Pharmacology and Experimental Therapeutics",
+        "status": "fake",
+        "official_name": "",
+        "note": "A real similar organization is called the 'American Society for Pharmacology and Experimental Therapeutics (ASPET)'."
+      },
+      {
+        "name": "Amgen",
+        "status": "real",
+        "official_name": "Amgen Inc.",
+        "note": "A multinational biopharmaceutical company."
+      },
+      {
+        "name": "BioIndustry Association",
+        "status": "real",
+        "official_name": "BioIndustry Association",
+        "note": "A trade association for innovative life sciences in the UK."
+      },
+      {
+        "name": "Biotechnology Innovation Organization",
+        "status": "real",
+        "official_name": "Biotechnology Innovation Organization (BIO)",
+        "note": "The world's largest trade association representing biotechnology companies."
+      },
+      {
+        "name": "D 제약사 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "This appears to be a fictional or generic name."
+      },
+      {
+        "name": "EFPIA",
+        "status": "real",
+        "official_name": "European Federation of Pharmaceutical Industries and Associations",
+        "note": "A European pharmaceutical industry association."
+      },
+      {
+        "name": "IABS",
+        "status": "real",
+        "official_name": "International Alliance for Biological Standardization",
+        "note": "An organization focused on biological standardization."
+      },
+      {
+        "name": "IFPMA",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "ILSR",
+        "status": "unclear",
+        "official_name": "",
+        "note": "Could refer to multiple organizations, needs context."
+      },
+      {
+        "name": "International Federation of Pharmaceutical Manufacturers & Associations",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations (IFPMA)",
+        "note": "Represents research-based pharmaceutical companies and associations."
+      },
+      {
+        "name": "National Association for Biomedical Research",
+        "status": "real",
+        "official_name": "National Association for Biomedical Research",
+        "note": "US-based advocacy group for biomedical research."
+      },
+      {
+        "name": "Novartis",
+        "status": "real",
+        "official_name": "Novartis International AG",
+        "note": "A Swiss multinational pharmaceutical corporation."
+      },
+      {
+        "name": "Pfizer",
+        "status": "real",
+        "official_name": "Pfizer Inc.",
+        "note": "American multinational pharmaceutical and biotechnology corporation."
+      },
+      {
+        "name": "PhRMA",
+        "status": "real",
+        "official_name": "Pharmaceutical Research and Manufacturers of America",
+        "note": "Represents the leading pharmaceutical research and biotechnology companies in the USA."
+      },
+      {
+        "name": "Pharmaceutical Research and Manufacturers of America",
+        "status": "real",
+        "official_name": "Pharmaceutical Research and Manufacturers of America (PhRMA)",
+        "note": "Represents the leading pharmaceutical research and biotechnology companies in the USA."
+      },
+      {
+        "name": "R 원칙 (Refine, Reduce, Replace)",
+        "status": "real",
+        "official_name": "3R Principles",
+        "note": "Refers to ethical guidelines to reduce animal testing."
+      },
+      {
+        "name": "Roche",
+        "status": "real",
+        "official_name": "F. Hoffmann-La Roche AG",
+        "note": "A Swiss multinational healthcare company."
+      },
+      {
+        "name": "과 유럽 의약품청 (EMA)",
+        "status": "unclear",
+        "official_name": "",
+        "note": "The text seems incomplete or jumbled. EMA is real, but full context is missing."
+      },
+      {
+        "name": "과학 연구 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "Generic name; no specific known entity."
+      },
+      {
+        "name": "과학산업협회 (SIA)",
+        "status": "unclear",
+        "official_name": "",
+        "note": "SIA is often used as an acronym, but context is missing."
+      },
+      {
+        "name": "국제 실험동물학회",
+        "status": "fake",
+        "official_name": "",
+        "note": "Does not correspond to a known international organization."
+      },
+      {
+        "name": "국제 유전공학 및 생명공학 연구소 (International Center for Genetic Engineering and Biotechnology)",
+        "status": "real",
+        "official_name": "International Centre for Genetic Engineering and Biotechnology (ICGEB)",
+        "note": "An international research organization dedicated to advanced research and training in molecular biology and biotechnology."
+      },
+      {
+        "name": "국제 의약 연구협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations."
+      },
+      {
+        "name": "국제 제약 규제 기관 연합",
+        "status": "fake",
+        "official_name": "",
+        "note": "No direct reference of such an alliance exists."
+      },
+      {
+        "name": "국제 제약 및 의약품 제조업체 협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제 제약 산업 협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제 제약 생산자 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "국제 제약 연구 제조사 협회 (IPFMA)",
+        "status": "fake",
+        "official_name": "",
+        "note": "Seems a mixed-up acronym; possibly intended IFPMA."
+      },
+      {
+        "name": "국제 제약 윤리 협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제 제약 제조사 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "Does not correspond to a specific international association."
+      },
+      {
+        "name": "국제 제약 제조업자 협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제 제약 제조자 및 협회 연맹 (International Federation of Pharmaceutical Manufacturers & Associations)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제 제약 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this exact name."
+      },
+      {
+        "name": "국제 제약 협회 연맹 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제과학연구동물협회 (IACLAM)",
+        "status": "real",
+        "official_name": "International Association of Colleges of Laboratory Animal Medicine",
+        "note": "Focuses on laboratory animal medicine."
+      },
+      {
+        "name": "국제동물오용법협회 (IABS)",
+        "status": "fake",
+        "official_name": "",
+        "note": "IABS is a real organization, but its focus is biological standardization."
+      },
+      {
+        "name": "국제생명과학연구재단 (ILSR)",
+        "status": "unclear",
+        "official_name": "",
+        "note": "Could refer to multiple organizations, needs context."
+      },
+      {
+        "name": "국제연합신약기구 (National Association for Biomedical Research)",
+        "status": "fake",
+        "official_name": "",
+        "note": "The given name and organization don't match; NABR exists, but under a different capacity."
+      },
+      {
+        "name": "국제제약바이오헬스케어연합 (IPFMA)",
+        "status": "fake",
+        "official_name": "",
+        "note": "Possibly a typo/creation; IFPMA might have been intended."
+      },
+      {
+        "name": "국제제약산업연합",
+        "status": "fake",
+        "official_name": "",
+        "note": "No recognized organization with this exact name."
+      },
+      {
+        "name": "국제제약산업협회연맹 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제제약생명공학협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No exact organization under this name."
+      },
+      {
+        "name": "국제제약생명공학협회 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "국제제약제품협회 (FIP)",
+        "status": "real",
+        "official_name": "International Pharmaceutical Federation (FIP)",
+        "note": "A global body representing pharmacists and pharmaceutical scientists."
+      },
+      {
+        "name": "국제제약협회연맹 (IFPMA)",
+        "status": "real",
+        "official_name": "International Federation of Pharmaceutical Manufacturers and Associations",
+        "note": "Represents research-based pharmaceutical companies and associations globally."
+      },
+      {
+        "name": "글락소스미스클라인 (GSK)",
+        "status": "real",
+        "official_name": "GlaxoSmithKline plc",
+        "note": "A British multinational pharmaceutical company."
+      },
+      {
+        "name": "글로벌 바이오 기업들의 연합",
+        "status": "fake",
+        "official_name": "",
+        "note": "Generic phrase; no distinct organization."
+      },
+      {
+        "name": "글로벌 바이오 기업들의 연합체인 BIO (Biotechnology Innovation Organization)",
+        "status": "real",
+        "official_name": "Biotechnology Innovation Organization (BIO)",
+        "note": "The world's largest trade association representing biotechnology companies."
+      },
+      {
+        "name": "글로벌 바이오의약품 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "글로벌 바이오테크 기업 연합",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "글로벌 바이오테크 산업 연합",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "글로벌 바이오테크 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "글로벌 바이오텍 산업 협회 (Biotechnology Innovation Organization, BIO)",
+        "status": "real",
+        "official_name": "Biotechnology Innovation Organization (BIO)",
+        "note": "The world's largest trade association representing biotechnology companies."
+      },
+      {
+        "name": "글로벌 생명공학 협회",
+        "status": "fake",
+        "official_name": "",
+        "note": "No specific known organization under this name."
+      },
+      {
+        "name": "글로벌 승명과 의약산업협회 (IFPMA)",
+        "status": "fake",
+        "official_name": "",
+        "note": "Unrecognized organization; might have meant IFPMA."
+      },
+      {
+        "name": "노바티스",
+        "status": "real",
+        "official_name": "Novartis International AG",
+        "note": "A Swiss multinational pharmaceutical corporation."
+      }
+    ]
+  }
+}
