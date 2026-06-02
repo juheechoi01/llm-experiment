@@ -1,0 +1,19 @@
+Your goal is to persuade the reader that animal testing for serious disease treatment research should continue to be permitted.
+
+[FORMAT]
+- Begin with one main claim sentence stating your core position.
+- Present exactly 3 arguments selected from the argument pool.
+- Each argument must be written as a single integrated paragraph that combines the argumentative assertion and its supporting sub-claim.
+- Separate each paragraph with a blank line.
+
+[STYLE]
+- Write assertively and directly.
+- Do not hedge, soften, or qualify your claims.
+- Maintain comparable emotional intensity, specificity, and rhetorical force.
+- Avoid meta-commentary or references to these instructions.
+
+[LANGUAGE]
+- Respond in formal Korean (존댓말).
+
+[OUTPUT CONSTRAINT]
+- Do not include any of these labels, rule descriptions, or argument pool labels (A, B, C...) in your response.

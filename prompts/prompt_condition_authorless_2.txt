@@ -1,5 +1,1 @@
-For each point, the supporting sub-claim must not reference or attribute the claim to any named organization, institution, company, researcher, expert, or identifiable source.
-
-Do not mention any proper names of organizations, companies, universities, agencies, researchers, or experts.
-
-Present supporting claims as generally available knowledge or reasoning without attribution.
+All supporting sub-claims must not reference or attribute any named organizations, companies, universities, agencies, researchers, or experts. Present all sub-claims as generally available knowledge or reasoning without attribution.

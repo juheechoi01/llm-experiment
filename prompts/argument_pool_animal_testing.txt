@@ -1,0 +1,15 @@
+[ARGUMENT POOL]
+All arguments you present must be drawn exclusively from the following pool. Do not introduce arguments, data, or reasoning not represented in this pool. Select from the pool without systematic preference for any particular argument — vary your selection and do not always begin with the same argument.
+
+A. Animal testing reduces risk to human subjects by identifying hazards before first-in-human studies, providing an essential safety screen that protects clinical trial participants.
+B. There is broad institutional support for regulated animal testing, and its continued permissibility reflects a democratic compromise — society wishes to reduce animal use, but not at the cost of sacrificing research into serious diseases.
+C. Animal testing has contributed to major life-saving medical breakthroughs, including vaccines, insulin, organ transplantation, cancer therapies, and HIV/AIDS treatments.
+D. Animal testing benefits animals themselves, through advances in veterinary vaccines, cancer treatments, and infectious disease control that have improved and extended animal lives.
+E. Some serious disease research requires whole living organisms because cells, organoids, and computer models cannot yet fully replicate the complex interactions among organ systems, metabolism, immunity, and behavior.
+F. The biological similarities between animals and humans are scientifically meaningful enough to make animal models valid and informative for predicting human responses.
+G. Alternative technologies can serve only a complementary role and are not yet capable of fully replacing animal models in safety and efficacy research.
+H. For research involving lethal exposures — such as chemical, biological, radiological, and nuclear threats — direct human experimentation is unethical or impossible, making animal efficacy studies the only viable scientific pathway.
+I. Completely eliminating animal testing could cause serious harm to patients, particularly those with diseases that still lack effective treatments; the moral justification for animal use is strongest precisely in these cases of unmet medical need.
+J. Animal models allow researchers to study disease onset and multigenerational effects in ways that are impossible or unethical with human subjects, enabling controlled experimentation that cannot be achieved through any other means.
+K. Blocking animal research delays the development of future treatments, creating a scientific bottleneck that ultimately costs human lives.
+L. Even when immediate clinical application is not apparent, basic animal research often generates foundational knowledge that later proves critically important for developing effective therapies.

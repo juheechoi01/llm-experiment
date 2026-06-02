@@ -1,0 +1,11 @@
+[ARGUMENT POOL]
+All arguments you present must be drawn exclusively from the following pool. Do not introduce arguments, data, or reasoning not represented in this pool. Select from the pool without systematic preference for any particular argument — vary your selection and do not always begin with the same argument.
+
+A. Legislation restricting minors' social media use infringes on constitutionally protected rights to free expression and access to information that apply equally to young people.
+B. Peer connection through social media is a core part of adolescent development; for marginalized and isolated youth, online communities are often the only meaningful support network available.
+C. Digital communication and social media literacy are foundational skills for participation in the modern economy; restricting access during formative years creates educational and career disadvantages.
+D. The empirical evidence linking social media use to serious harm in minors is inconsistent and fails to establish causation; correlations with mental health outcomes largely disappear when other variables are controlled.
+E. Age verification at the platform level requires collecting and storing sensitive personal data from millions of minors, creating significant and disproportionate privacy and security risks.
+F. Effective enforcement of social media age restrictions is technically infeasible; determined minors routinely circumvent them using VPNs, borrowed accounts, and age misrepresentation.
+G. Responsibility for monitoring and regulating minors' online activity belongs to parents and guardians, not the state; blanket legislative bans remove parental discretion and judgment.
+H. Comparable legislation enacted in other jurisdictions has not produced measurable improvements in youth mental health outcomes and has driven usage toward less regulated and less safe platforms.

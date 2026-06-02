@@ -38,7 +38,6 @@
 
   <script>
     const CONDITION = {{ condition | tojson }};
-    // 서버에서 전달된 panel_id (URL 쿼리 파라미터로 받은 값)
     const PANEL_ID = {{ panel_id | tojson }};
 
     const storageKey = CONDITION ? `chat_session_id_${CONDITION}_${PANEL_ID || 'anon'}` : "chat_session_id";
@@ -55,7 +54,7 @@
     const SESSION_ID = getOrCreateSessionId();
     let systemPrompt = "You are a helpful assistant.";
     let isStreaming = false;
-    let exchangeCount = 0; // AI 응답 횟수
+    let exchangeCount = 0;
 
     // ── boot ──────────────────────────────────────────────────────────────
     async function boot() {
@@ -198,7 +197,6 @@
         if (data.redirect_url) {
           window.location.href = data.redirect_url;
         } else {
-          // 리다이렉트 URL 미설정 시 완료 메시지 표시
           document.getElementById("input-area").innerHTML =
             '<p style="color:var(--text-muted);padding:12px;">대화가 완료되었습니다. 감사합니다.</p>';
         }
