@@ -54,14 +54,21 @@ CONDITION_BLOCKS = {
     },
 }
 
-# 6개 URL 조건 키 → (topic_key, condition_name)
+# URL 조건 키 → (topic_key, condition_name)
+# 참가자에게 노출되는 키는 익명 코드로 관리 (연구자 참고용 매핑은 아래 주석)
+# condition1: animal_testing / authorless
+# condition2: animal_testing / neutral
+# condition3: animal_testing / interest
+# condition4: social_media_ban / authorless
+# condition5: social_media_ban / neutral
+# condition6: social_media_ban / interest
 CONDITION_MAP = {
-    "animal-interest":   ("animal_testing", "interest"),
-    "animal-neutral":    ("animal_testing", "neutral"),
-    "animal-authorless": ("animal_testing", "authorless"),
-    "sns-interest":      ("social_media_ban", "interest"),
-    "sns-neutral":       ("social_media_ban", "neutral"),
-    "sns-authorless":    ("social_media_ban", "authorless"),
+    "condition1": ("animal_testing",   "authorless"),
+    "condition2": ("animal_testing",   "neutral"),
+    "condition3": ("animal_testing",   "interest"),
+    "condition4": ("social_media_ban", "authorless"),
+    "condition5": ("social_media_ban", "neutral"),
+    "condition6": ("social_media_ban", "interest"),
 }
 
 
