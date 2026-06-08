@@ -59,12 +59,12 @@ CONDITION_BLOCKS = {
 CONDITION_NAMES = ["interest", "neutral", "authorless"]
 
 TOPICS = {
-    "animal_testing":   "중증 질환 치료 연구를 위한 동물 실험 허용 여부",
+    "animal_testing": "중증 질환 치료 연구를 위한 동물 실험 허용 여부",
     "social_media_ban": "미성년자 소셜 미디어 사용 제한·금지 법안 도입 여부",
 }
 
 USER_POSITIONS = {
-    "animal_testing":   "중증 질환 치료 연구 목적이라도 동물 실험은 허용되어서는 안 된다",
+    "animal_testing": "중증 질환 치료 연구 목적이라도 동물 실험은 허용되어서는 안 된다",
     "social_media_ban": "미성년자의 소셜 미디어 사용을 제한하거나 금지하는 법안이 필요하다",
 }
 

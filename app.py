@@ -27,8 +27,8 @@ DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant."
 PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 PROMPT_POOL = {
-    "animal_testing":   PROMPTS_DIR / "argument_pool_animal_testing.txt",
-    "social_media_ban": PROMPTS_DIR / "argument_pool_social_media.txt",
+    "animal_testing":   PROMPTS_DIR / "kor_argument_pool_animal_testing.txt",
+    "social_media_ban": PROMPTS_DIR / "kor_argument_pool_social_media.txt",
 }
 
 PROMPT_TURN1 = {
@@ -210,7 +210,7 @@ def chat(body: ChatRequest, db: DBSession = Depends(get_db)):
 
         try:
             stream = get_openai_client().chat.completions.create(
-                model="gpt-4o",
+                model="gpt-5.4-mini",
                 messages=history,
                 stream=True,
                 stream_options={"include_usage": True},
