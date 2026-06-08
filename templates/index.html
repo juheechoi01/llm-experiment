@@ -232,13 +232,18 @@
 
     // ── input auto-resize ─────────────────────────────────────────────────
     const userInput = document.getElementById("user-input");
+    let isComposing = false;
+
+    userInput.addEventListener("compositionstart", () => { isComposing = true; });
+    userInput.addEventListener("compositionend", () => { isComposing = false; });
+
     userInput.addEventListener("input", () => {
       userInput.style.height = "auto";
       userInput.style.height = userInput.scrollHeight + "px";
     });
 
     userInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) {
+      if (e.key === "Enter" && !e.shiftKey && !isComposing) {
         e.preventDefault();
         sendMessage();
       }

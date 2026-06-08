@@ -1,15 +1,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0f0f0f;
-  --surface: #1a1a1a;
-  --border: #2e2e2e;
-  --text: #e8e8e8;
-  --text-muted: #666;
-  --accent: #7c6af7;
-  --user-bg: #1e1e2e;
-  --assistant-bg: #161616;
-  --error: #e05c5c;
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --text: #18181b;
+  --text-muted: #a1a1aa;
+  --accent: #6c63ff;
+  --user-bg: #eeecfd;
+  --assistant-bg: #ffffff;
+  --error: #dc2626;
 }
 
 body {
@@ -105,7 +105,7 @@ header h1 {
   background: var(--border);
   color: var(--text);
 }
-#btn-system-cancel:hover { background: #3a3a3a; }
+#btn-system-cancel:hover { background: #d4d4d8; }
 
 /* messages */
 #messages {
@@ -189,7 +189,7 @@ header h1 {
 #btn-send:disabled { opacity: 0.4; cursor: not-allowed; }
 
 #btn-complete {
-  background: #2a2a2a;
+  background: var(--border);
   color: var(--text-muted);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -202,12 +202,12 @@ header h1 {
   transition: all 0.15s;
 }
 #btn-complete:not(:disabled) {
-  background: #1a3a1a;
-  color: #6fcf6f;
-  border-color: #3a6a3a;
+  background: #dcfce7;
+  color: #16a34a;
+  border-color: #86efac;
   cursor: pointer;
 }
-#btn-complete:not(:disabled):hover { background: #1f4a1f; }
+#btn-complete:not(:disabled):hover { background: #bbf7d0; }
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
