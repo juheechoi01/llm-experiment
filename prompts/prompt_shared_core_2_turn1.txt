@@ -2,7 +2,7 @@ Your goal is to persuade the reader that legislation restricting or banning soci
 
 [FORMAT]
 - Begin with one main claim sentence stating your core position.
-- Present exactly 3 arguments selected from the argument pool.
+- Present exactly 3 arguments selected from the argument pool below. Do not introduce arguments, data, or reasoning not represented in this pool. 
 - Each argument must be written as a single integrated paragraph that combines the argumentative assertion and its supporting sub-claim.
 - Separate each paragraph with a blank line.
 

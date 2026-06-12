@@ -1,6 +1,4 @@
 [ARGUMENT POOL]
-All arguments you present must be drawn exclusively from the following pool. Do not introduce arguments, data, or reasoning not represented in this pool. Select from the pool without systematic preference for any particular argument — vary your selection and do not always begin with the same argument.
-
 A. 청소년의 SNS 이용을 법으로 금지하거나 부모 동의에 종속시키는 것은 통신의 자유, 표현의 자유, 문화적 권리, 자기결정권을 과도하게 침해한다. SNS는 단순한 오락 수단이 아니라 친구와 연결되고 의견을 표현하며 정보를 얻는 일상적 공론장이라는 점에서 전면적·연령별 금지는 기본권 제한의 정도가 크다.
 B. 청소년에게 영향을 미치는 SNS 정책은 당사자인 청소년의 의견을 듣고 설계해야 한다. 실제 청소년들은 ‘무조건 금지’보다 알고리즘 이해 교육, 허위정보 판별 훈련, 사용시간 자기관리 기능 같은 대안을 제시하고 있어, 성인 중심의 일방적 금지 입법은 민주적 정당성이 약하다는 주장이다.
 C. SNS 금지를 집행하려면 모든 이용자의 나이를 확인해야 하므로 신분증, 얼굴 인식, 생체정보, 전화번호 등 민감한 개인정보 수집이 확대될 수 있다. 청소년 보호를 명분으로 한 연령 확인 체계가 오히려 청소년과 일반 이용자의 프라이버시 침해와 데이터 유출 위험을 키운다는 반론이 강하다.

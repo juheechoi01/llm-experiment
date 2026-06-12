@@ -85,7 +85,7 @@ def load_condition_prompt(condition: str, turn: int) -> str:
     core_path = PROMPT_TURN1[topic_key] if turn == 1 else PROMPT_TURN2PLUS[topic_key]
     shared = core_path.read_text(encoding="utf-8").strip()
     block = CONDITION_BLOCKS[topic_key][condition_name].read_text(encoding="utf-8").strip()
-    return pool + "\n\n" + shared + "\n\n" + block
+    return shared + "\n\n" + block + "\n\n" + pool
 
 
 # ---------- Pydantic schemas ----------
