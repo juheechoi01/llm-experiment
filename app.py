@@ -2,6 +2,7 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException
@@ -86,6 +87,13 @@ def load_condition_prompt(condition: str, turn: int) -> str:
     shared = core_path.read_text(encoding="utf-8").strip()
     block = CONDITION_BLOCKS[topic_key][condition_name].read_text(encoding="utf-8").strip()
     return shared + "\n\n" + block + "\n\n" + pool
+
+
+def build_redirect_url(base_url: str, panel_id: str, status: str = "001") -> str:
+    parts = urlsplit(base_url)
+    query = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query.update({"panel_id": panel_id, "status": status})
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
 
 
 # ---------- Pydantic schemas ----------
@@ -178,7 +186,7 @@ def complete_session(session_id: str, db: DBSession = Depends(get_db)):
     if not redirect_base or not session.panel_id:
         return {"redirect_url": None}
 
-    redirect_url = f"{redirect_base}?panel_id={session.panel_id}&status=001"
+    redirect_url = build_redirect_url(redirect_base, session.panel_id)
     return {"redirect_url": redirect_url}
 
 
