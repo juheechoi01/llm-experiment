@@ -42,6 +42,11 @@ PROMPT_TURN2PLUS = {
     "social_media_ban": PROMPTS_DIR / "prompt_shared_core_2_turn2plus.txt",
 }
 
+STARTER_HINTS = {
+    "animal_testing":   ["동물실험 찬반 논쟁에 대해 어떻게 생각해?", "인간의 질병 치료를 위해 동물실험을 해도 된다고 봐?"],
+    "social_media_ban": ["청소년 SNS 금지 법안 제정에 대해 어떻게 생각해?", "청소년들의 SNS 사용을 법적으로 금지해야 한다고 봐?"],
+}
+
 CONDITION_BLOCKS = {
     "animal_testing": {
         "interest":   PROMPTS_DIR / "prompt_condition_interest.txt",
@@ -126,8 +131,10 @@ async def index(request: Request):
 async def condition_page(request: Request, condition: str, panel_id: str | None = None):
     if condition not in CONDITION_MAP:
         raise HTTPException(status_code=404, detail="Not found")
+    topic_key, _ = CONDITION_MAP[condition]
     return templates.TemplateResponse(request=request, name="index.html",
-                                      context={"condition": condition, "panel_id": panel_id})
+                                      context={"condition": condition, "panel_id": panel_id,
+                                               "starter_hints": STARTER_HINTS[topic_key]})
 
 
 # ---------- API routes ----------

@@ -209,6 +209,32 @@ header h1 {
 }
 #btn-complete:not(:disabled):hover { background: #bbf7d0; }
 
+/* starter hint notice */
+.msg-hint {
+  background: #f4f4f5;
+  border: 1px dashed #d4d4d8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: center;
+  align-self: stretch;
+}
+.msg-hint-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #71717a;
+  margin-bottom: 8px;
+}
+.msg-hint-sentences {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.msg-hint-sentences span {
+  font-size: 13px;
+  color: #a1a1aa;
+  font-style: italic;
+}
+
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

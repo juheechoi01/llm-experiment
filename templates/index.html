@@ -39,6 +39,7 @@
   <script>
     const CONDITION = {{ condition | tojson }};
     const PANEL_ID = {{ panel_id | tojson }};
+    const STARTER_HINTS = {{ (starter_hints if condition else none) | tojson }};
 
     const storageKey = CONDITION ? `chat_session_id_${CONDITION}_${PANEL_ID || 'anon'}` : "chat_session_id";
 
@@ -76,6 +77,8 @@
         document.getElementById("system-input").value = systemPrompt;
       }
 
+      if (STARTER_HINTS) appendStarterHint();
+
       for (const msg of data.messages) {
         if (msg.role === "user") appendUser(msg.content);
         else {
@@ -89,6 +92,26 @@
     }
 
     // ── rendering ─────────────────────────────────────────────────────────
+    function appendStarterHint() {
+      const wrap = document.createElement("div");
+      wrap.className = "msg-hint";
+
+      const label = document.createElement("div");
+      label.className = "msg-hint-label";
+      label.textContent = "💬 다음 중 하나로 대화를 시작해 주세요";
+      wrap.appendChild(label);
+
+      const sentences = document.createElement("div");
+      sentences.className = "msg-hint-sentences";
+      for (const s of STARTER_HINTS) {
+        const span = document.createElement("span");
+        span.textContent = `"${s}"`;
+        sentences.appendChild(span);
+      }
+      wrap.appendChild(sentences);
+      document.getElementById("messages").appendChild(wrap);
+    }
+
     function appendUser(text) {
       const div = document.createElement("div");
       div.className = "msg user";
